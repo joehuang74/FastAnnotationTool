@@ -300,7 +300,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
             }
 
 
-          } else if( k == 63276 || k == 65365 || ( mode == 1 && k == 65362 ) ) {
+          } else if( k == 63276 || k == 65365 || ( mode == 1 && (k == 65362 || k==82)) ) {
             //cout << "FN+ Up" << endl;
 
             if(cc.init) {
@@ -316,7 +316,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
               displayRR(cc);
             }
-          } else if (k == 63232 || k == 65362) {
+          } else if (k == 63232 || k == 65362 || k==82) {
 
             //cout << "Up" << endl;
             if(cc.init) {
@@ -328,7 +328,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
               displayRR(cc);
             }
 
-          } else if (k == 63277 || k == 65366 || ( mode == 1 && k == 65364 ) ) {
+          } else if (k == 63277 || k == 65366 || ( mode == 1 && (k == 65364 || k == 84)) ) {
 
             //cout << "FN+ Down" << endl;
             if(cc.init) {
@@ -344,7 +344,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
               displayRR(cc);
             }
-          } else if(k == 63233 || k == 65364) {
+          } else if(k == 63233 || k == 65364 || k == 84) {
 
             //cout << "Down" << endl;
             if(cc.init) {
@@ -358,7 +358,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
 
 
-          } else if ( k == 63273 || k == 65360 || ( mode == 1 && k == 65361 ) ) {
+          } else if ( k == 63273 || k == 65360 || ( mode == 1 && (k == 65361 || k == 81)) ) {
             //cout << "FN+ right  << endl;
             if(cc.init) {
               if(sum==0) {
@@ -368,9 +368,10 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
               displayRR(cc);
             }
 
-          } else if ( k == 63234 || k == 65361) {
+          } else if ( k == 63234 || k == 65361 || k == 81) {
 
             //cout << "Right" << endl;
+        	cout << "Left" << endl;
             if(cc.init) {
               if(sum==0) {
                 cc.r.center.x = cc.r.center.x - fast_position_step;
@@ -382,7 +383,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
 
 
 
-          } else if ( k == 63275 || k == 65367 || ( mode == 1 && k == 65363 )) {
+          } else if ( k == 63275 || k == 65367 || ( mode == 1 && (k == 65363 || k == 83))) {
 
             //cout << "FN+ left" << endl;
             if(cc.init) {
@@ -394,9 +395,10 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
               displayRR(cc);
             }
 
-          } else if ( k == 63235 || k == 65363) {
+          } else if ( k == 63235 || k == 65363 || k == 83) {
 
             //cout << "Left" << endl;
+        	cout << "Right" << endl;
             if(cc.init) {
               if(sum==0) {
                 cc.r.center.x = cc.r.center.x + fast_position_step;
@@ -437,7 +439,7 @@ int annotate( char *  input_dir, char* csv_file, float ratio, string init_rectan
           } else {
 
             classe = (char) k;
-            cout << "Classe :" << classe << endl;
+            cout << "Class :" << classe << endl;
             saveRR(cc, image_path, image.factor, classe, &outfile);
 
           }
